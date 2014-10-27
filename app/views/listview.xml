@@ -1,0 +1,8 @@
+<Alloy>
+  <Collection src="tidev" id="listCollection" instance="true" />
+  <ListView id="list">
+    <ListSection dataCollection="$.listCollection">
+      <ListItem title="{title}" />
+    </ListSection>
+  </ListView>
+</Alloy>
