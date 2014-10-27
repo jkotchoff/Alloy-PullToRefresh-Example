@@ -8,8 +8,6 @@
 	color: "#000"
 }
 
-"#label": {
-	font: {
-		fontSize: 12
-	}
+"ListView": {
+	top: '20dp'
 }

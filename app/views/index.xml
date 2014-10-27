@@ -1,5 +1,10 @@
 <Alloy>
+  <Collection src="tidev" id="listCollection" instance="true" />
 	<Window class="container">
-		<Label id="label" onClick="doClick">Hello, World</Label>
+    <ListView id="list">
+      <ListSection dataCollection="$.listCollection">
+        <ListItem title="{title}" />
+      </ListSection>
+    </ListView>
 	</Window>
 </Alloy>
