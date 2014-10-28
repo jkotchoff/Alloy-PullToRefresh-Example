@@ -2,12 +2,16 @@
 	backgroundColor:"white"
 }
 
-"Label": {
-	width: Ti.UI.SIZE,
-	height: Ti.UI.SIZE,
-	color: "#000"
+"ListView": {
+	top: '20dp',
+	bottom: 0,
+	width: '100%'
 }
 
-"ListView": {
-	top: '20dp'
+"ListItem": {
+  font: {
+    fontSize: '14dp'
+  },
+  color: 'black',
+  height: '44dp'
 }

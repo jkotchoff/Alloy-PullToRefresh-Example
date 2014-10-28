@@ -24,10 +24,9 @@ var api = {
     initialize: function(parameters) {
         parameters.arguments = parameters.arguments || {};
 
-        // create the controller given in argument witch we give the var api in argument
-        api.content = Alloy.createController(parameters.controller, { pulltorefresh: api, arguments: parameters.arguments });
-
-        api.contentView = api.content.getView();
+        api.contentView = parameters.control;
+        
+        api.callback = parameters.onRelease;
 
         if (OS_IOS) {
             if (parameters.iosRefreshControl) {
@@ -79,11 +78,11 @@ var api = {
             api.stop();
         }
     },
-
+/*
     setCallback: function(callback) {
         api.callback = callback;
     },
-
+*/
     // only for Android
     scroll: function(e) {
         if (e.y != null) {
@@ -164,3 +163,4 @@ var api = {
 };
 
 exports.initialize = api.initialize;
+exports.stop       = api.stop;

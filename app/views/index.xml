@@ -1,6 +1,11 @@
 <Alloy>
   <Collection src="tidev" id="listCollection" instance="true" />
-	<Window class="container">
+	<Window id="index" class="container">
     <Widget id="pulltorefresh" src="com.jolicode.pullToRefresh"></Widget>
+    <ListView id="list">
+      <ListSection dataCollection="$.listCollection">
+        <ListItem title="{title}" />
+      </ListSection>
+    </ListView>
 	</Window>
 </Alloy>
