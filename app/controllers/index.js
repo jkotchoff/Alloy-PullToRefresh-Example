@@ -12,21 +12,22 @@ var refreshFn = function(){
   });
 };
 
-var list = $.list;
-if(OS_ANDROID){
-  $.index.remove(list);
-}
-
+var initialised = false;
 $.index.addEventListener("open", function(){
-  $.pulltorefresh.initialize({
-    control: list,
-    onRelease: refreshFn,
-      headerPullView: {
-        lastUpdate: {
-          width: '230dp'
-        }
-      }  
-  });  
+  if(!initialised) {
+    var list = $.list;
+    $.index.remove(list);
+
+    $.pulltorefresh.initialize({
+      control: list,
+      onRelease: refreshFn,
+        headerPullView: {
+          lastUpdate: {
+            width: '230dp'
+          }
+        }  
+    });  
+  }
   refreshFn();
 });
 
